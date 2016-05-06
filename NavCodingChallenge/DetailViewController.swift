@@ -22,8 +22,9 @@ class DetailViewController: UIViewController {
         titleLabel.layer.transform = CATransform3DTranslate(CATransform3DIdentity, -self.view.frame.width, 0, 0)
         synopsisLabel.layer.transform = CATransform3DTranslate(CATransform3DIdentity, -self.view.frame.width, 0, 0)
         ratingLabel.layer.transform = CATransform3DTranslate(CATransform3DIdentity, -self.view.frame.width, 0, 0)
-
-
+        
+        let customFont = UIFont(name: "Avenir Next", size: 17.0)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: customFont!], forState: UIControlState.Normal)
         // Do any additional setup after loading the view.
         if let movie = movie {
             updateWith(movie)

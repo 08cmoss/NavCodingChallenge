@@ -20,8 +20,8 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
         navigationController?.navigationBar.barTintColor = UIColor.grayColor()
         navigationController?.navigationBar.barStyle = UIBarStyle.Black
         navigationController?.navigationBar.tintColor = UIColor.blackColor()
-        
-
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir Next", size: 17)!]
+        UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).font = UIFont(name: "Avenir Next", size: 14.0)
     }
     
     // MARK: - Search Bar Delegate Methods
@@ -29,7 +29,6 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
         let searchTerm = searchBar.text ?? ""
-        
         MovieController.getMoviesWithSearchTerm(searchTerm) { (movies) -> Void in
             self.searchResultMovies = movies
             
